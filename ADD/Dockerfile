@@ -3,5 +3,6 @@ RUN dnf install nginx -y
 RUN rm -rf /usr/share/nginx/html/index.html
 ADD https://raw.githubusercontent.com/daws-84s/notes/refs/heads/main/session-01.txt /usr/share/nginx/html/index.html
 RUN chmod +r /usr/share/nginx/html/index.html # Read permission is required for nginx to serve the file
-ADD sample-1.tar /tmp/ # Extract contents of sample-1.tar into /tmp/ directory
+ADD sample-1.tar /tmp/ 
+# Extract contents of sample-1.tar into /tmp/ directory
 CMD ["nginx", "-g", "daemon off;"]
